@@ -12,6 +12,14 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
+				<string>DSDT.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
 				<string>SSDT-EC.aml</string>
 			</dict>
 			<dict>
@@ -344,13 +352,17 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>BgAmCg==</data>
+				<data>AAAWCg==</data>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,2,0</string>
 				<key>device-id</key>
 				<data>EgQAAA==</data>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>AAAAgA==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -483,29 +495,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SmallTreeIntel8259x.kext</string>
+				<string>IntelMausiEthernet.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SmallTreeIntel8259x</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>CPUFriend.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/CPUFriend</string>
+				<string>Contents/MacOS/IntelMausiEthernet</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -563,13 +559,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>IntelMausiEthernet.kext</string>
+				<string>CPUFriend.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IntelMausiEthernet</string>
+				<string>Contents/MacOS/CPUFriend</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -579,13 +575,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCBatteryManager.kext</string>
+				<string>BrcmBluetoothInjector.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCBatteryManager</string>
+				<string></string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -595,19 +591,35 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCLightSensor.kext</string>
+				<string>BrcmFirmwareData.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCLightSensor</string>
+				<string>Contents/MacOS/BrcmFirmwareData</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>BundlePath</key>
+				<string>BrcmPatchRAM3.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/MacOS/BrcmPatchRAM3</string>
 			</dict>
 		</array>
 		<key>Block</key>
@@ -635,32 +647,14 @@
 		<key>Patch</key>
 		<array>
 			<dict>
-				<key>Base</key>
-				<string>__ZN8AppleRTC18setupDateTimeAlarmEPK11RTCDateTime</string>
 				<key>Comment</key>
-				<string>Disable RTC wake scheduling</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<false/>
+				<string>10.11.dp1+ BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok original</string>
 				<key>Find</key>
-				<data></data>
+				<data>SIX/dEdIiwc=</data>
 				<key>Identifier</key>
-				<string>com.apple.driver.AppleRTC</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string>19.0.0</string>
+				<string>com.apple.iokit.IOBluetoothFamily</string>
 				<key>Replace</key>
-				<data>ww==</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
+				<data>Qb4PAAAA60Q=</data>
 			</dict>
 			<dict>
 				<key>Base</key>
@@ -772,7 +766,7 @@
 			<key>PanicNoKextDump</key>
 			<false/>
 			<key>PowerTimeoutKernelPanic</key>
-			<false/>
+			<true/>
 			<key>ThirdPartyDrives</key>
 			<false/>
 			<key>XhciPortLimit</key>
@@ -914,7 +908,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 Slide=1 darkwake=0</string>
+				<string>keepsyms=1 Slide=1 darkwake=0</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
@@ -975,18 +969,17 @@
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string>C02402902GUG0MCJA</string>
+			<string>D25420501GUG36D8C</string>
 			<key>ROM</key>
-			<data>6+Tws2tp</data>
+			<data>4c2zsBzV</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>Macmini7,1</string>
+			<string>iMac14,4</string>
 			<key>SystemSerialNumber</key>
-			<string>C02M34ZEG1J0</string>
+			<string>D25MQJZDFY0T</string>
 			<key>SystemUUID</key>
-			<string>FD51568B-C314-4FEA-A3A2-3C27F9B36B69
-</string>
+			<string>F2ACE692-B1A4-4BFB-85F6-94D4E0B01CD5</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
